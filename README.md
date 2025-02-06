@@ -1,16 +1,32 @@
-# Many To Many (many-2-many) implementation for Yii PHP Framework 2
+Many To Many (many-2-many) implementation for Yii PHP Framework 2
+---
 
-## Overview
+Overview
+---
+
 `Many2ManyBehavior` is a Yii PHP Framework 2 behavior that facilitates managing many-2-many relationships between models. It automatically handles the insertion, update, and deletion of related models.
 
-## Installation
-Install via Composer:
+Installation
+---
+
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
 
 ```shell
-composer require thtmorais/many2many
+composer require thtmorais/yii2-many-2-many "*"
 ```
 
-## Usage
+or add
+
+```
+"thtmorais/yii2-many-2-many": "*"
+```
+
+to the require section of your `composer.json` file.
+
+Usage
+---
 
 Attach `Many2ManyBehavior` to your model:
 
@@ -36,7 +52,8 @@ class Model extends \yii\db\ActiveRecord
 }
 ```
 
-## Properties
+Properties
+---
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -47,13 +64,15 @@ class Model extends \yii\db\ActiveRecord
 | `relatedModelAttribute` | `string` | Foreign key in the related model referencing the source model. |
 | `relatedModelValidate` | `bool` | Whether to validate the related model before saving. Defaults to `true`. |
 
-## Events Handled
+Events Handled
+---
 
 - **`EVENT_AFTER_INSERT`**: Saves related models after the source model is inserted.
 - **`EVENT_AFTER_UPDATE`**: Updates related models when the source model is updated.
 - **`EVENT_AFTER_DELETE`**: Deletes related models when the source model is deleted.
 
-## Methods
+Methods
+---
 
 ### `afterInsert()`
 Handles the insertion of related models when the source model is inserted.
@@ -64,7 +83,8 @@ Handles the update of related models when the source model is updated.
 ### `afterDelete()`
 Deletes related models when the source model is deleted.
 
-## Example Usage
+Example Usage
+---
 
 ```php
 $model = new Model();
