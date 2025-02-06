@@ -1,0 +1,25 @@
+{
+    "name": "thtmorais/yii2-many-2-many",
+    "description": "",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "yii2-extension", "many-to-many", "many to many", "m2m", "many 2 many", "many-2-many"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/thtmorais/yii2-many-2-many/issues",
+        "source": "https://github.com/thtmorais/yii2-many-2-many"
+    },
+    "authors": [
+        {
+            "name": "Matheus Evangelista Morais",
+            "email": "thtmorais@hotmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "thtmorais\\many2many\\": "src"
+        }
+    }
+}
