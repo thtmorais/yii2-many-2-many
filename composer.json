@@ -2,7 +2,7 @@
     "name": "thtmorais/yii2-many-2-many",
     "description": "",
     "type": "yii2-extension",
-    "keywords": ["yii2", "yii2-extension", "many-2-many", "many-to-many", "m2m", "mtm"],
+    "keywords": ["yii2", "yii2-extension", "yii2-many-2-many", "yii2-many-to-many", "many-2-many", "many-to-many", "m2m", "mtm"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/thtmorais/yii2-many-2-many/issues",
