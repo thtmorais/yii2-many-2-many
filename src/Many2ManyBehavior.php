@@ -2,6 +2,7 @@
 
 namespace thtmorais\many2many;
 
+use yii\helpers\ArrayHelper;
 use yii\db\BaseActiveRecord;
 
 /**
@@ -95,15 +96,15 @@ class Many2ManyBehavior extends \yii\base\Behavior
             $exist = false;
 
             if (is_array($model->{$this->attribute})) {
-            foreach ($model->{$this->attribute} as $attributes) {
-                if (array_key_exists($this->relatedModelId, $attributes)) {
-                    if ($oldModel->{$this->relatedModelId} === $attributes[$this->relatedModelId]) {
-                        $exist = true;
+                foreach ($model->{$this->attribute} as $attributes) {
+                    if (ArrayHelper::keyExists($this->relatedModelId, $attributes)) {
+                        if ($oldModel->{$this->relatedModelId} === ArrayHelper::getValue($attributes, $this->relatedModelId)) {
+                            $exist = true;
 
-                        break;
+                            break;
+                        }
                     }
                 }
-            }
             }
 
             if (!$exist) {
@@ -117,9 +118,9 @@ class Many2ManyBehavior extends \yii\base\Behavior
             foreach ($model->{$this->attribute} as $attributes) {
                 $relatedModel = new $this->relatedModel();
 
-                if (array_key_exists($this->relatedModelId, $attributes)) {
+                if (ArrayHelper::keyExists($this->relatedModelId, $attributes)) {
                     foreach ($oldModels as $oldModel) {
-                        if ($oldModel->{$this->relatedModelId} == $attributes[$this->relatedModelId]) {
+                        if ($oldModel->{$this->relatedModelId} == ArrayHelper::getValue($attributes,$this->relatedModelId)) {
                             $relatedModel = $oldModel;
                         }
                     }
