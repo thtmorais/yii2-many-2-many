@@ -98,7 +98,7 @@ class Many2ManyBehavior extends \yii\base\Behavior
             if (is_array($model->{$this->attribute})) {
                 foreach ($model->{$this->attribute} as $attributes) {
                     if (ArrayHelper::keyExists($this->relatedModelId, $attributes)) {
-                        if ($oldModel->{$this->relatedModelId} === ArrayHelper::getValue($attributes, $this->relatedModelId)) {
+                        if ($oldModel->{$this->relatedModelId} == ArrayHelper::getValue($attributes, $this->relatedModelId)) {
                             $exist = true;
 
                             break;
